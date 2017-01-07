@@ -7,17 +7,15 @@
 
 ## Snippets
 
-a n | n > 0 = n | True = -n
+`a n | n > 0 = n | True = -n`    Guards can go on one line
 
-f 0 = 1 ; f n = n * f (n-1)
+`f 0 = 1 ; f n = n * f (n-1)`    This works in GHCi
 
-k :: Int ; k = 4
+`k :: Int ; k = 4`     So does this
 
-undefined \`seq\` 42
+``Just undefined `seq` 42``  Demonstrates that `Just expr` is in WHNF
 
-Just undefined \`seq\` 42
-
-a \`seq\` b \`seq\` f a b
+``a `seq` b `seq` f a b``   Forces a and b
 
 ## Definitions
 
