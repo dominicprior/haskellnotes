@@ -17,6 +17,8 @@
 
 ``a `seq` b `seq` f a b``   Forces a and b
 
+`withFile "b.txt" ReadMode hGetContents`  Fails with hGetContents: illegal operation (delayed read on closed handle)
+
 ## Definitions
 
 f $! x = x \`seq\` f x
