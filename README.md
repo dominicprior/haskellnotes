@@ -7,17 +7,19 @@
 
 ## Snippets
 
-`a n | n > 0 = n | True = -n`    Guards can go on one line
+`a n | n > 0 = n | True = -n`   &emsp;  Guards can go on one line
 
-`f 0 = 1 ; f n = n * f (n-1)`    This works in GHCi
+`f 0 = 1 ; f n = n * f (n-1)`    &emsp;  This works in GHCi
 
-`k :: Int ; k = 4`     So does this
+`k :: Int ; k = 4`   &emsp;  So does this
 
-``Just undefined `seq` 42``  Demonstrates that `Just expr` is in WHNF
+``Just undefined `seq` 42``   &emsp; Demonstrates that `Just expr` is in WHNF
 
-``a `seq` b `seq` f a b``   Forces a and b
+``a `seq` b `seq` f a b``   &emsp;  Forces a and b
 
-`withFile "b.txt" ReadMode hGetContents`  Fails with hGetContents: illegal operation (delayed read on closed handle)
+`withFile "b.txt" ReadMode hGetContents`   &emsp;  hGetContents: illegal operation (delayed read on closed handle)
+
+`withFile "b.txt" ReadMode $ \h -> hGetContents h >>= putStr`
 
 ## Definitions
 
