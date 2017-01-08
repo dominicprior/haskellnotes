@@ -3,7 +3,8 @@
 * ~
 * forall
 * Lazy IO, pipes, ...
-* WHNF, seq
+* ~~WHNF~~, seq
+* catch, throw
 
 ## Snippets
 
