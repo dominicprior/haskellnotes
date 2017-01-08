@@ -23,6 +23,16 @@
 
 `withFile "b.txt" ReadMode $ \h -> hGetContents h >>= putStr`
 
+`runEffect $ for (each [3,4]) $ lift . print`
+
+`runEffect $ for (yield 4) $ lift . print`
+
+`runEffect $ each ~> lift . print $ [1..3]`
+
+`runEffect $ yield "hi" >-> P.stdoutLn`
+
+`runEffect $ yield "hi" >-> (await >>= lift . putStrLn)`
+
 ## Definitions
 
 f $! x = x \`seq\` f x
