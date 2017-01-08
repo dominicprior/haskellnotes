@@ -5,6 +5,7 @@
 * Lazy IO, pipes, ...
 * ~~WHNF~~, seq
 * catch, throw
+* text, bytestring
 
 ## Snippets
 
