@@ -28,6 +28,8 @@ f $! x = x \`seq\` f x
 
 seq :: a -> b -> b   -- evaluates a to WHNF when seq a b is evaluated to WHNF
 
+``hGetContents h  = IO.hGetContents h >>= \s -> length s `seq` return s``  -- strict version
+
 
 ## Examples of things in WHNF
 
