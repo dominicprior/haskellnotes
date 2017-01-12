@@ -2,10 +2,11 @@
 * !
 * ~
 * forall
-* Lazy IO, pipes, ...
+* Lazy IO, conduits, ...
 * ~~WHNF~~, seq
 * catch, throw
 * text, bytestring
+* react-flux, ghcjs
 
 ## Snippets
 
