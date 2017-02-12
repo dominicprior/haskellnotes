@@ -1,5 +1,4 @@
 ## Things I would like to learn
-* !
 * ~
 * forall
 * Lazy IO, conduits, ...
@@ -19,6 +18,8 @@
 ``Just undefined `seq` 42``   &emsp; Demonstrates that `Just expr` is in WHNF
 
 ``a `seq` b `seq` f a b``   &emsp;  Forces a and b
+
+`ReaderT [String] (WriterT [String] ((StateT StdGen) (ST s))) (Image PixelRGB16)`
 
 `withFile "b.txt" ReadMode hGetContents`   &emsp;  hGetContents: illegal operation (delayed read on closed handle)
 
