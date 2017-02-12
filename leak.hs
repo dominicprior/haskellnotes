@@ -30,7 +30,7 @@ main = do
   --print $ m [1..10000]
   --print $ k (B 0) [1..100000]
   --print $ evalState (sumOfRnd (2000 * 1000) 0) $ mkStdGen 1
-  print $ evalState (histOfRnd (10 * 1000 * 1000) M.empty) $ mkStdGen 1 
+  print $ evalState (histOfRnd (1000 * 1000) M.empty) $ mkStdGen 1 
   --print $ evalState (treeOfRnd (1000 * 1000) Empty) $ mkStdGen 1 
   --print $ hist M.empty [1..1000000]
   --print $ histTree Empty [1..100 * 1000 * 1000] 
@@ -96,11 +96,9 @@ histOfRnd :: Int -> M.IntMap Int -> State StdGen (M.IntMap Int)
 histOfRnd 0 ans = return ans
 histOfRnd n ans = do
   g <- get
-  let (a::Int, g') = random g
+  let (a, g') = random g
   put g'
-  let d = a `mod` 10 :: Int
-  let ans' = ans `seq` d `seq` M.insertWith (+++) d 1 ans
-  ans' `seq` histOfRnd (n-1) ans'
+  histOfRnd (n-1) $! M.insertWith (+) (mod a 10) 1 ans
 
 treeOfRnd :: Int -> Tree Int Int -> State StdGen (Tree Int Int)
 treeOfRnd 0 ans = return ans
