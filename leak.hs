@@ -12,6 +12,8 @@ import qualified Data.IntMap.Strict as M
 -- "+RTS -M1M -K2k".  It seems like the main trick is to add
 -- enough seq statements everywhere, and to not lose faith!
 
+-- The stack incantation is: stack build --ghc-options="-rtsopts -O1"
+
 -- There was an important clue here:
 -- https://mail.haskell.org/pipermail/beginners/2014-August/014027.html
 
